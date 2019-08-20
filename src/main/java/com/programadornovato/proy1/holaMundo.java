@@ -16,10 +16,37 @@ public class holaMundo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.print("Hola mundo");
-        System.out.println("Hola mundo 2");
-        System.out.println("Hola mundo 3");
-        System.out.println("Hola mundo 4");
+        byte mordida;
+        mordida=(byte)126.55;
+        System.out.println("mordida="+mordida);
+        
+        short corto;
+        corto=(short)32000.55;
+        System.out.println("corto="+corto);
+        
+        int entero;
+        entero=32000;
+        System.out.println("entero="+entero);
+        
+        long largo;
+        largo=32000;
+        System.out.println("largo="+largo);
+        
+        float flotante;
+        flotante=32000.55f;
+        System.out.println("flotante="+flotante);
+        
+        double doble;
+        doble=32000.55;
+        System.out.println("doble="+doble);
+        
+        char caracter;
+        caracter='c';
+        System.out.println("caracter="+caracter);
+        
+        boolean boleano;
+        boleano=false;
+        System.out.println("boleano="+boleano);
     }
     
 }
