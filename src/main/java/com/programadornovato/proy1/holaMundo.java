@@ -5,6 +5,8 @@
  */
 package com.programadornovato.proy1;
 
+import java.util.Scanner;
+
 /**
  *
  * @author eugenio
@@ -16,45 +18,32 @@ public class holaMundo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        final Byte mordida;
-        mordida=(byte)126.55;
-        System.out.println("mordida="+mordida);
+        Scanner inInt=new Scanner (System.in);
+        int entero;
+        System.out.println("Escriba un numero entero");
+        entero=inInt.nextInt();
+        System.out.println("Su numero es: "+entero);
         
-        final float pi=3.1415f;
-        float res=pi*2;
-        System.out.println("pi*2="+res);
+        Scanner inFloat=new Scanner (System.in);
+        float flotante;
+        System.out.println("Escriba un numero flotante");
+        flotante=inFloat.nextFloat();
+        System.out.println("Su numero es: "+flotante);
         
-        Short corto;
-        corto=(short)32000.55;
-        System.out.println("corto="+corto);
-        
-        Integer entero;
-        entero=32000;
-        System.out.println("entero="+entero);
-        
-        Long largo;
-        largo=(long)32000;
-        System.out.println("largo="+largo);
-        
-        Float flotante;
-        flotante=mordida.floatValue();
-        System.out.println("flotante="+flotante);
-        
-        Double doble;
-        doble=32000.55;
-        System.out.println("doble="+doble);
-        
-        char caracter;
-        caracter='c';
-        System.out.println("caracter="+caracter);
-        
-        Boolean boleano;
-        boleano=false;
-        System.out.println("boleano="+boleano);
-        
+        Scanner inCadena=new Scanner (System.in);
         String cadena;
-        cadena="cadena";
-        System.out.println("cadena="+cadena);
+        System.out.println("Escriba una cadena");
+        cadena=inCadena.nextLine();
+        System.out.println("Su cadena es: "+cadena);
+        
+        Scanner inCaracter=new Scanner (System.in);
+        char caracter;
+        System.out.println("Escriba un caracter");
+        caracter=inCaracter.next().charAt(0);
+        System.out.println("Su caracter es: "+caracter);
+        
+        
+        
     }
     
 }
