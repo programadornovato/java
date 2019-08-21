@@ -16,9 +16,13 @@ public class holaMundo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Byte mordida;
+        final Byte mordida;
         mordida=(byte)126.55;
         System.out.println("mordida="+mordida);
+        
+        final float pi=3.1415f;
+        float res=pi*2;
+        System.out.println("pi*2="+res);
         
         Short corto;
         corto=(short)32000.55;
