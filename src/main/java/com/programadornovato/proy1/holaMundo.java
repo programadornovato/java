@@ -18,7 +18,8 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner entra=new Scanner(System.in);
+        // Estoy declarando el escaner para ingresar datos por consola
+        Scanner entra=new Scanner(System.in); 
         float num1,num2,suma,resta,mul,div,residuo;
         System.out.println("Inresa 2 numeros:");
         num1=entra.nextFloat();
@@ -28,11 +29,13 @@ public class holaMundo {
         mul=num1*num2;
         div=num1/num2;
         residuo=num1%num2;
+        /*
         System.out.println("Suma="+suma);
         System.out.println("Resta="+resta);
         System.out.println("Multiplicacion="+mul);
         System.out.println("Divicion="+div);
-        System.out.println("Residuo="+residuo);
+        */
+        // System.out.println("Residuo="+residuo);
     }
     
 }
