@@ -18,28 +18,20 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*
-        double numRaiz=8;
-        double resRaiz=0;
-        resRaiz=Math.sqrt(numRaiz);
-        System.out.println("resRaiz="+resRaiz);
-        
-        double base=5;
-        double exp=2;
-        double resExpo;
-        resExpo=Math.pow(base, exp);
-        System.out.println("resExpo="+resExpo);
-        
-        float numAbs=-5.5f;
-        double resAbs=Math.abs(numAbs);
-        System.out.println("resAbs="+resAbs);
-        
-        float numRed=5.5f;
-        int resRed=Math.round(numRed);
-        System.out.println("resRed="+resRed);
-        */
-        double resAle=Math.random();
-        System.out.println("resAle="+Math.round(resAle*100));
+        Scanner entra=new Scanner(System.in);
+        System.out.print("Ingrese valor del producto 1:");
+        float prod1=entra.nextFloat();
+        System.out.print("Ingrese valor del producto 2:");
+        float prod2=entra.nextFloat();
+        System.out.print("Ingrese valor del producto 3:");
+        float prod3=entra.nextFloat();
+        float suma=prod1+prod2+prod3;
+        System.out.println("Suma total="+suma);
+        // 5.45=6.0   5.55=6.0
+        double totalMasRedondeo=Math.ceil(suma);
+        System.out.println("Total pagado:"+totalMasRedondeo);
+        double redondeo=totalMasRedondeo-suma;
+        System.out.println("Gracias por redondear:"+redondeo);
     }
     
 }
