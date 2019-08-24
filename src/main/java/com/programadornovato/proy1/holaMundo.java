@@ -19,19 +19,22 @@ public class holaMundo {
      */
     public static void main(String[] args) {
         Scanner entra=new Scanner(System.in);
-        System.out.print("Ingrese valor del producto 1:");
-        float prod1=entra.nextFloat();
-        System.out.print("Ingrese valor del producto 2:");
-        float prod2=entra.nextFloat();
-        System.out.print("Ingrese valor del producto 3:");
-        float prod3=entra.nextFloat();
-        float suma=prod1+prod2+prod3;
-        System.out.println("Suma total="+suma);
-        // 5.45=6.0   5.55=6.0
-        double totalMasRedondeo=Math.ceil(suma);
-        System.out.println("Total pagado:"+totalMasRedondeo);
-        double redondeo=totalMasRedondeo-suma;
-        System.out.println("Gracias por redondear:"+redondeo);
+        System.out.print("Diametro del vaso=");
+        float diametro=entra.nextFloat();
+        System.out.print("Altura del vaso=");
+        float altura=entra.nextFloat();
+        double volumen;
+        float pi=3.1416f;
+        float radio=diametro/2;
+        volumen=pi*Math.pow(radio, 2)*altura;
+        System.out.println("Vol de un vaso de cerveza es:"+volumen);
+        System.out.print("Con cuantos litros te emborrachas?");
+        float litros=entra.nextFloat();
+        float mililitrosParaEmborracharme=litros*1000;
+        double limiteVasos=mililitrosParaEmborracharme/volumen;
+        System.out.println("Yo me emborracho con :"+limiteVasos+" vasos de cerveza");
+        
+        
     }
     
 }
