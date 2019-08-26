@@ -20,12 +20,17 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Calendar fechaNac=new GregorianCalendar(2000,01,01);
-        Calendar fechaHoy=Calendar.getInstance();
-        int anoNac=fechaNac.get(Calendar.YEAR);
-        int anoHoy=fechaHoy.get(Calendar.YEAR);
-        int edad=anoHoy-anoNac;
-        System.out.println("Edad="+edad);
+        Scanner entra=new Scanner(System.in);
+        int numUser,numSis;
+        numSis=(int)(Math.random()*10);
+        System.out.print("Ingresa un numero mayor o igual a "+numSis+": ");
+        numUser=entra.nextInt();
+        if(numUser >= numSis){
+            System.out.println("Muy bien");
+        }
+        else{
+            System.out.println("Muy mal");
+        }
     }
     
 }
