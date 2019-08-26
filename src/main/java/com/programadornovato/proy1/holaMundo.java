@@ -21,22 +21,34 @@ public class holaMundo {
      */
     public static void main(String[] args) {
         Scanner entra=new Scanner(System.in);
-        System.out.println("Seleccione una opcion\n1: Acceso\n2: Configuracion\n3: Ayuda");
-        int seleleccion=entra.nextInt();
+        /*
+        System.out.println("Escribe una opcion\nacceso\nconfiguracion\nayuda");
+        String seleleccion=entra.nextLine();
+        seleleccion=seleleccion.toLowerCase();
         switch(seleleccion){
-            case 1:
-                System.out.println("Seleccionaste el accesos");
+            case "acceso":
+                System.out.println("Seleccionaste el acceso");
                 break;
-            case 2:
+            case "configuracion":
                 System.out.println("Seleccionaste la configuracion");
                 break;
-            case 3:
+            case "ayuda":
                 System.out.println("Seleccionaste la ayuda");
                 break;
             default:
                 System.out.println("Opcion no valida");
                 break;
 
+        }
+        */
+        System.out.println("Saludame por favor");
+        String respuesta= entra.nextLine();
+        respuesta=respuesta.toLowerCase();
+        if(respuesta.equals("hola") ==true){
+            System.out.println("¿Como estas?");
+        }
+        else{
+            System.out.println("No te entiendo");
         }
     }
     
