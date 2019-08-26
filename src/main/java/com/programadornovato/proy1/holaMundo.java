@@ -21,34 +21,20 @@ public class holaMundo {
      */
     public static void main(String[] args) {
         Scanner entra=new Scanner(System.in);
-        /*
-        System.out.println("Escribe una opcion\nacceso\nconfiguracion\nayuda");
-        String seleleccion=entra.nextLine();
-        seleleccion=seleleccion.toLowerCase();
-        switch(seleleccion){
-            case "acceso":
-                System.out.println("Seleccionaste el acceso");
-                break;
-            case "configuracion":
-                System.out.println("Seleccionaste la configuracion");
-                break;
-            case "ayuda":
-                System.out.println("Seleccionaste la ayuda");
-                break;
-            default:
-                System.out.println("Opcion no valida");
-                break;
-
-        }
-        */
-        System.out.println("Saludame por favor");
-        String respuesta= entra.nextLine();
-        respuesta=respuesta.toLowerCase();
-        if(respuesta.equals("hola") ==true){
-            System.out.println("¿Como estas?");
+        System.out.println("Escribe un numero entre 1 y 999");
+        int num=entra.nextInt();
+        if(num>0 && num <10){
+            System.out.println("Tu numero es unidad");
         }
         else{
-            System.out.println("No te entiendo");
+            if(num >=10 && num <100){
+                System.out.println("Tu numero es decena");
+            }
+            else{
+                if(num >=100 && num<1000){
+                    System.out.println("Tu numero es centena");
+                }
+            }
         }
     }
     
