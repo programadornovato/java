@@ -21,30 +21,26 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Random rand=new Random();
-        int d1=rand.nextInt(6)+1;
-        int d2=rand.nextInt(6)+1;
-        int d3=rand.nextInt(6)+1;
-        System.out.println("Dado 1="+d1);
-        System.out.println("Dado 2="+d2);
-        System.out.println("Dado 3="+d3);
-        if(d1==6 && d2==6 && d3==6){
-            System.out.println("Excelente");
+        /*
+        int i=1;
+        while(i<=10){
+            System.out.println("i="+i);
+            i=i+1;
         }
-        else{
-            if(  (d1==6 && d2==6) || (d1==6 && d3==6) || (d2==6 && d3==6)  ){
-                System.out.println("Muy bien");
-            }
-            else{
-                if(d1==6 || d2==6 || d3==6){
-                    System.out.println("Regular");
-                }
-                else{
-                    if(d1!=6 && d2!=6 && d3!=6){
-                        System.out.println("Pesimo");
-                    }
-                }
-            }
+        
+        int i=10;
+        while(i>=1){
+            System.out.println("i="+i);
+            i=i-1;
+        }
+        */
+        Scanner entra=new Scanner(System.in);
+        System.out.println("Humano cuantas veces quieres que se repita");
+        int repeticiones= entra.nextInt();
+        int i=1;
+        while(i<=repeticiones){
+            System.out.println("i="+i);
+            i=i+2;
         }
     }
     
