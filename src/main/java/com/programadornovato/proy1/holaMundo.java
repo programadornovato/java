@@ -7,6 +7,7 @@ package com.programadornovato.proy1;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Random;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -20,19 +21,28 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner entra=new Scanner(System.in);
-        System.out.println("Escribe un numero entre 1 y 999");
-        int num=entra.nextInt();
-        if(num>0 && num <10){
-            System.out.println("Tu numero es unidad");
+        Random rand=new Random();
+        int d1=rand.nextInt(6)+1;
+        int d2=rand.nextInt(6)+1;
+        int d3=rand.nextInt(6)+1;
+        System.out.println("Dado 1="+d1);
+        System.out.println("Dado 2="+d2);
+        System.out.println("Dado 3="+d3);
+        if(d1==6 && d2==6 && d3==6){
+            System.out.println("Excelente");
         }
         else{
-            if(num >=10 && num <100){
-                System.out.println("Tu numero es decena");
+            if(  (d1==6 && d2==6) || (d1==6 && d3==6) || (d2==6 && d3==6)  ){
+                System.out.println("Muy bien");
             }
             else{
-                if(num >=100 && num<1000){
-                    System.out.println("Tu numero es centena");
+                if(d1==6 || d2==6 || d3==6){
+                    System.out.println("Regular");
+                }
+                else{
+                    if(d1!=6 && d2!=6 && d3!=6){
+                        System.out.println("Pesimo");
+                    }
                 }
             }
         }
