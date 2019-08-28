@@ -28,20 +28,21 @@ public class holaMundo {
             i=i+1;
         }
         
-        int i=10;
-        while(i>=1){
+        for(int i=1;i<=10;i++){
             System.out.println("i="+i);
-            i=i-1;
+        }
+
+        for(int i=10;i>=1;i--){
+            System.out.println("i="+i);
         }
         */
         Scanner entra=new Scanner(System.in);
-        System.out.println("Humano cuantas veces quieres que se repita");
-        int repeticiones= entra.nextInt();
-        int i=1;
-        while(i<=repeticiones){
+        System.out.println("Humano cuantas repeticiones quieres");
+        int repeticiones=entra.nextInt();
+        for(int i=1;i<=repeticiones;i++){
             System.out.println("i="+i);
-            i=i+2;
         }
+
     }
     
 }
