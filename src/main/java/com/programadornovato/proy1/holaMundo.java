@@ -21,15 +21,17 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String texto=JOptionPane.showInputDialog("Humano!!!! escribe un texto");
-        int longitud=texto.length();
-        char[] caracteres=new char[longitud];
-        int inverso=longitud;
-        for(int i=0;i<longitud;i++){
-            caracteres[i]=texto.charAt(inverso-1);
-            inverso--;
+        String [] perros={"Monte","Chupacabras","Solovino","Chimuelo","La wera","El chiquito"};
+        
+        for(int i=0;i<perros.length;i++){
+            System.out.println((i+1)+" "+perros[i]);
         }
-        System.out.println(caracteres);
+        System.out.println("_________________");
+        int i=1;
+        for(String perro:perros){
+            System.out.println(i+" "+perro);
+            i++;
+        }
     }
     
 }
