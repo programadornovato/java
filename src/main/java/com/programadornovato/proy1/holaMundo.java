@@ -21,25 +21,13 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int contador=0;
-        float calificacion=0,suma=0,promedio;
-        String texto;
-        do{
-            texto=JOptionPane.showInputDialog("Ingresa la calificacion del semestre "+(contador+1));
-            System.out.println(texto);
-            if(texto!=null){
-                calificacion=Float.parseFloat(texto);
-                suma=suma+calificacion;
-                contador++;
-            }
-        }while(texto!=null);
-        if(contador>0){
-            promedio=suma/contador;
-            JOptionPane.showMessageDialog(null, "Promedio="+promedio);
+        //Un arreglo puede definirse como un grupo o una colección finita, homogénea y ordenada de elementos
+                           //0,1,2,3
+        int [] listaNumeros={5,3,9,1};
+        for(int i=0;i<=3;i++){
+            System.out.println(listaNumeros[i]);
         }
-        else{
-            JOptionPane.showMessageDialog(null, "Humano estupido debes de poner por lo menos una calificacion");
-        }
+        
     }
     
 }
