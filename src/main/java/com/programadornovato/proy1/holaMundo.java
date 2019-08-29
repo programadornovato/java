@@ -21,23 +21,25 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Random rand=new Random();
-        int aleatorio=rand.nextInt(5)+1;
-        int num = Integer.parseInt(JOptionPane.showInputDialog("Humano que numero estoy pensado (entre 1 y 5) dijita 0 para salir"));
-        while(num!= aleatorio){
-            num = Integer.parseInt(JOptionPane.showInputDialog("Humano estupdo te equivocaste en que numero estoy pensado (entre 1 y 5) dijita 0 para salir"));
-            if(num==0){
-                break;
+        int contador=0;
+        float calificacion=0,suma=0,promedio;
+        String texto;
+        do{
+            texto=JOptionPane.showInputDialog("Ingresa la calificacion del semestre "+(contador+1));
+            System.out.println(texto);
+            if(texto!=null){
+                calificacion=Float.parseFloat(texto);
+                suma=suma+calificacion;
+                contador++;
             }
-            aleatorio=rand.nextInt(5)+1;
-        }
-        if(num!=0){
-            JOptionPane.showMessageDialog(null, "Bien jugado humano");
+        }while(texto!=null);
+        if(contador>0){
+            promedio=suma/contador;
+            JOptionPane.showMessageDialog(null, "Promedio="+promedio);
         }
         else{
-            JOptionPane.showMessageDialog(null, "Huamno estupido el numero era "+aleatorio);
+            JOptionPane.showMessageDialog(null, "Humano estupido debes de poner por lo menos una calificacion");
         }
-        
     }
     
 }
