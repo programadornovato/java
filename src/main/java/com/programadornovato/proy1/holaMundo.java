@@ -21,13 +21,15 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //Un arreglo puede definirse como un grupo o una colección finita, homogénea y ordenada de elementos
-                           //0,1,2,3
-        int [] listaNumeros={5,3,9,1};
-        for(int i=0;i<=3;i++){
-            System.out.println(listaNumeros[i]);
+        String texto=JOptionPane.showInputDialog("Humano!!!! escribe un texto");
+        int longitud=texto.length();
+        char[] caracteres=new char[longitud];
+        int inverso=longitud;
+        for(int i=0;i<longitud;i++){
+            caracteres[i]=texto.charAt(inverso-1);
+            inverso--;
         }
-        
+        System.out.println(caracteres);
     }
     
 }
