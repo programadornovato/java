@@ -21,17 +21,28 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String [] perros={"Monte","Chupacabras","Solovino","Chimuelo","La wera","El chiquito"};
+        String texto=JOptionPane.showInputDialog("Humano!!! escribe un palindromo");
+        int longitud=texto.length();
+        char [] letras=new char[longitud];
+        char [] letrasInv=new char[longitud];
+        int inverso=longitud;
+        boolean igual=true;
+        for(int i=0;i<longitud;i++){
+            letrasInv[i]=texto.toLowerCase().charAt(inverso-1);
+            inverso--;
+            letras[i]=texto.toLowerCase().charAt(i);
+            if(letrasInv[i]!=letras[i]){
+                igual=false;
+                break;
+            }
+        }
+        if(igual==false){
+            System.out.println("Humano estupido!!!"+ texto +" no es un palindromo");
+        }
+        else{
+            System.out.println("Bien jugado Humano!!! "+ texto +" SI es un palindromo");
+        }
         
-        for(int i=0;i<perros.length;i++){
-            System.out.println((i+1)+" "+perros[i]);
-        }
-        System.out.println("_________________");
-        int i=1;
-        for(String perro:perros){
-            System.out.println(i+" "+perro);
-            i++;
-        }
     }
     
 }
