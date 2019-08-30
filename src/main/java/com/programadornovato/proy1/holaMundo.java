@@ -21,22 +21,23 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String texto;
-        float calificaciones[]=new float[4],suma=0,promedio=0;
-        int semestres=0;
-        do{
-            texto=JOptionPane.showInputDialog("Humano!! ingresa la calificacion del alumno del semestre "+(semestres+1));
-            if(texto==null){
-                break;
-            }
-            calificaciones[semestres]= Float.parseFloat(texto);
-            semestres++;
-        }while(semestres<4);
-        for(float calificacion:calificaciones){
-            suma+=calificacion;
+        int a[]=new int[5],b[]=new int[5],c[]=new int[10];
+        for(int i=0;i<5;i++){
+            a[i]= Integer.parseInt(JOptionPane.showInputDialog("Humano ingresa el valor "+ (i+1)+" del arreglo a"));
         }
-        promedio=suma/semestres;
-        JOptionPane.showMessageDialog(null, promedio);
+        for(int i=0;i<5;i++){
+            b[i]= Integer.parseInt(JOptionPane.showInputDialog("Humano ingresa el valor "+ (i+1)+" del arreglo b"));
+        }
+        int j=0;
+        for(int i=0;i<5;i++){
+            c[j]=a[i];
+            j++;
+            c[j]=b[i];
+            j++;
+        }
+        for(int elemento:c){
+            System.out.println(elemento);
+        }
     }
     
 }
