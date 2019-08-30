@@ -21,23 +21,21 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int a[]=new int[5],b[]=new int[5],c[]=new int[10];
-        for(int i=0;i<5;i++){
-            a[i]= Integer.parseInt(JOptionPane.showInputDialog("Humano ingresa el valor "+ (i+1)+" del arreglo a"));
+        String texto=JOptionPane.showInputDialog("Humano ingresa numero divididos por coma");
+        //5,6,7,10,5
+        String numerosEnTexto[]=texto.split(",");
+        int cantidad=numerosEnTexto.length;
+        int numeros[]=new int[cantidad];
+        for(int i=0;i<cantidad;i++){
+            numeros[i]=Integer.parseInt( numerosEnTexto[i]);
         }
-        for(int i=0;i<5;i++){
-            b[i]= Integer.parseInt(JOptionPane.showInputDialog("Humano ingresa el valor "+ (i+1)+" del arreglo b"));
+        int mayor=0;
+        for(int numero:numeros){
+            if(numero>mayor){
+                mayor=numero;
+            }
         }
-        int j=0;
-        for(int i=0;i<5;i++){
-            c[j]=a[i];
-            j++;
-            c[j]=b[i];
-            j++;
-        }
-        for(int elemento:c){
-            System.out.println(elemento);
-        }
+        JOptionPane.showMessageDialog(null, "Humano este es tu numero mayor="+mayor);
     }
     
 }
