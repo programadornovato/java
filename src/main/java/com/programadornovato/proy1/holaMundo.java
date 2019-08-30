@@ -21,28 +21,22 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String texto=JOptionPane.showInputDialog("Humano!!! escribe un palindromo");
-        int longitud=texto.length();
-        char [] letras=new char[longitud];
-        char [] letrasInv=new char[longitud];
-        int inverso=longitud;
-        boolean igual=true;
-        for(int i=0;i<longitud;i++){
-            letrasInv[i]=texto.toLowerCase().charAt(inverso-1);
-            inverso--;
-            letras[i]=texto.toLowerCase().charAt(i);
-            if(letrasInv[i]!=letras[i]){
-                igual=false;
+        String texto;
+        float calificaciones[]=new float[4],suma=0,promedio=0;
+        int semestres=0;
+        do{
+            texto=JOptionPane.showInputDialog("Humano!! ingresa la calificacion del alumno del semestre "+(semestres+1));
+            if(texto==null){
                 break;
             }
+            calificaciones[semestres]= Float.parseFloat(texto);
+            semestres++;
+        }while(semestres<4);
+        for(float calificacion:calificaciones){
+            suma+=calificacion;
         }
-        if(igual==false){
-            System.out.println("Humano estupido!!!"+ texto +" no es un palindromo");
-        }
-        else{
-            System.out.println("Bien jugado Humano!!! "+ texto +" SI es un palindromo");
-        }
-        
+        promedio=suma/semestres;
+        JOptionPane.showMessageDialog(null, promedio);
     }
     
 }
