@@ -21,21 +21,31 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //5,4,2,1,3
         String texto=JOptionPane.showInputDialog("Humano ingresa numero divididos por coma");
-        //5,6,7,10,5
         String numerosEnTexto[]=texto.split(",");
         int cantidad=numerosEnTexto.length;
-        int numeros[]=new int[cantidad];
+        int numeros[]=new int[cantidad],tem;
         for(int i=0;i<cantidad;i++){
             numeros[i]=Integer.parseInt( numerosEnTexto[i]);
         }
-        int mayor=0;
-        for(int numero:numeros){
-            if(numero>mayor){
-                mayor=numero;
+        for(int i=0;i<(cantidad-1);i++){
+            for(int j=0;j<(cantidad-1);j++){
+                if(numeros[j]>numeros[j+1]){
+                    tem=numeros[j];
+                    numeros[j]=numeros[j+1];
+                    numeros[j+1]=tem;
+                }
             }
         }
-        JOptionPane.showMessageDialog(null, "Humano este es tu numero mayor="+mayor);
+        System.out.println("Humano aqui estan tus numeritos ordenados de forma acendente");
+        for(int i=0;i<cantidad;i++){
+            System.out.print(numeros[i]+",");
+        }
+        System.out.println("\nHumano aqui estan tus numeritos ordenados de forma decendente");
+        for(int i=cantidad-1;i>=0;i--){
+            System.out.print(numeros[i]+",");
+        }
     }
     
 }
