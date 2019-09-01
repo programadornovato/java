@@ -25,24 +25,27 @@ public class holaMundo {
         String texto=JOptionPane.showInputDialog("Humano ingresa numero divididos por coma");
         String numerosEnTexto[]=texto.split(",");
         int cantidad=numerosEnTexto.length;
-        int numeros[]=new int[cantidad],tem;
+        int numeros[]=new int[cantidad],tem,bandera=1,ciclos=0;
         for(int i=0;i<cantidad;i++){
             numeros[i]=Integer.parseInt( numerosEnTexto[i]);
         }
-        for(int i=0;i<(cantidad-1);i++){
+        for(int i=0;i<(cantidad-1) && bandera==1;i++){
+            bandera=0;
             for(int j=0;j<(cantidad-1);j++){
                 if(numeros[j]>numeros[j+1]){
+                    bandera=1;
                     tem=numeros[j];
                     numeros[j]=numeros[j+1];
                     numeros[j+1]=tem;
                 }
             }
+            ciclos++;
         }
-        System.out.println("Humano aqui estan tus numeritos ordenados de forma acendente");
+        System.out.println("Humano aqui estan tus numeritos ordenados de forma acendente y me tomo "+ciclos+" ciclos");
         for(int i=0;i<cantidad;i++){
             System.out.print(numeros[i]+",");
         }
-        System.out.println("\nHumano aqui estan tus numeritos ordenados de forma decendente");
+        System.out.println("\nHumano aqui estan tus numeritos ordenados de forma decendente y me tomo "+ciclos+" ciclos");
         for(int i=cantidad-1;i>=0;i--){
             System.out.print(numeros[i]+",");
         }
