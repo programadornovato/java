@@ -21,37 +21,32 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //5 4 2 1 3
+        //5 10 15 58 20 56 65
         Scanner entra=new Scanner(System.in);
-        int elemento[]=new int[5],menor,pos,tem;
-        System.out.println("Humano holgaza escribe 5 numero para que yo los ordene");
-        for(int i=0;i<5;i++){
+        int elemento[]=new int[7];
+        System.out.println("Humano holgazan escribe 7 numeros");
+        for(int i=0;i<7;i++){
             elemento[i]=entra.nextInt();
         }
         
-        for(int i=0;i<elemento.length-1;i++){
-            menor=elemento[i];
-            pos=i;
-            for(int j=i+1;j<elemento.length;j++){
-                if(elemento[j]<menor){
-                    menor=elemento[j];
-                    pos=j;
-                }
+        System.out.println("Humano ahora ingresa tu piche numero a buscar");
+        int numBuscar=entra.nextInt();
+        
+        int i=0;
+        boolean bandera=false;
+        while(i<7 && bandera== false){
+            if(numBuscar==elemento[i]){
+                bandera=true;
             }
-            if(pos!=i){
-                tem=elemento[i];
-                elemento[i]=elemento[pos];
-                elemento[pos]=tem;
-            }
+            i++;
         }
-        System.out.println("Humano aqui estan tus elementos ordenados de forma acendente");
-        for(int i=0;i<elemento.length;i++){
-            System.out.print(elemento[i]+",");
+        if(bandera){
+            System.out.println("Humano!!! ya encontre tu pinche numero en la posicion "+i);
         }
-        System.out.println("Humano aqui estan tus elementos ordenados de forma decendente");
-        for(int i=elemento.length-1;i>=0;i--){
-            System.out.print(elemento[i]+",");
+        else{
+            System.out.println("Humano estupido!! no encontre tu numerito");
         }
+        
 
     }
     
