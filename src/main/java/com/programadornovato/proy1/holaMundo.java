@@ -21,34 +21,38 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //5,4,2,1,3
-        String texto=JOptionPane.showInputDialog("Humano ingresa numero divididos por coma");
-        String numerosEnTexto[]=texto.split(",");
-        int cantidad=numerosEnTexto.length;
-        int numeros[]=new int[cantidad],tem,bandera=1,ciclos=0;
-        for(int i=0;i<cantidad;i++){
-            numeros[i]=Integer.parseInt( numerosEnTexto[i]);
+        //5 4 2 1 3
+        Scanner entra=new Scanner(System.in);
+        int elemento[]=new int[5],menor,pos,tem;
+        System.out.println("Humano holgaza escribe 5 numero para que yo los ordene");
+        for(int i=0;i<5;i++){
+            elemento[i]=entra.nextInt();
         }
-        for(int i=0;i<(cantidad-1) && bandera==1;i++){
-            bandera=0;
-            for(int j=0;j<(cantidad-1);j++){
-                if(numeros[j]>numeros[j+1]){
-                    bandera=1;
-                    tem=numeros[j];
-                    numeros[j]=numeros[j+1];
-                    numeros[j+1]=tem;
+        
+        for(int i=0;i<elemento.length-1;i++){
+            menor=elemento[i];
+            pos=i;
+            for(int j=i+1;j<elemento.length;j++){
+                if(elemento[j]<menor){
+                    menor=elemento[j];
+                    pos=j;
                 }
             }
-            ciclos++;
+            if(pos!=i){
+                tem=elemento[i];
+                elemento[i]=elemento[pos];
+                elemento[pos]=tem;
+            }
         }
-        System.out.println("Humano aqui estan tus numeritos ordenados de forma acendente y me tomo "+ciclos+" ciclos");
-        for(int i=0;i<cantidad;i++){
-            System.out.print(numeros[i]+",");
+        System.out.println("Humano aqui estan tus elementos ordenados de forma acendente");
+        for(int i=0;i<elemento.length;i++){
+            System.out.print(elemento[i]+",");
         }
-        System.out.println("\nHumano aqui estan tus numeritos ordenados de forma decendente y me tomo "+ciclos+" ciclos");
-        for(int i=cantidad-1;i>=0;i--){
-            System.out.print(numeros[i]+",");
+        System.out.println("Humano aqui estan tus elementos ordenados de forma decendente");
+        for(int i=elemento.length-1;i>=0;i--){
+            System.out.print(elemento[i]+",");
         }
+
     }
     
 }
