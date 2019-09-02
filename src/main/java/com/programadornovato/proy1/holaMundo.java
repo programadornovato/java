@@ -21,36 +21,44 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /*
-        1	2	3
-        4	5	6
-        7	8	9
-        */
-        int matriz[][]=new int[3][3];
-        int matrizT[][]=new int[3][3];
         Scanner entra=new Scanner(System.in);
+        System.out.println("Humano dime cuantas filas tiene tu matriz");
+        int fil=entra.nextInt();
+        System.out.println("Humano dime cuantas columnas tiene tu matriz");
+        int col=entra.nextInt();
+        int matriz[][]=new int[fil][col];
         
-        for(int i=0;i<3;i++){
-            System.out.println("Humano!!! ingresa los datos de la fila "+(i+1));
-            for(int j=0;j<3;j++){
+        boolean esSimetrica=true;
+        for(int i=0;i<fil;i++){
+            System.out.println("Humano ingresa los datos de la fila "+(i+1));
+            for(int j=0;j<col;j++){
                 matriz[i][j]=entra.nextInt();
             }
         }
         
-        for(int i=0;i<3;i++){
-            for(int j=0;j<3;j++){
-                matrizT[j][i]=matriz[i][j];
+        if(col==fil){
+            for(int i=0;i<fil;i++){
+                for(int j=0;j<col;j++){
+                    if(matriz[i][j]!=matriz[j][i]){
+                        esSimetrica=false;
+                        break;
+                    }
+                }
+                if(esSimetrica==false){
+                    break;
+                }
             }
         }
-        
-        System.out.println("Humano aqui esta tu pinc**%*%* matriz traspuesta");
-        for(int i=0;i<3;i++){
-            for(int j=0;j<3;j++){
-                System.out.print(matrizT[i][j]+"\t");
-            }
-            System.out.println("");
+        else{
+            System.out.println("Humano tu matriz para empesar no es simetrica");
         }
         
+        if(esSimetrica==true){
+            System.out.println("Humano felicidades tu matriz si es simetrica");
+        }
+        else{
+            System.out.println("Nop no es simetrica");
+        }
     }
     
 }
