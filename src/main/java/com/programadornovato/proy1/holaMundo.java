@@ -21,20 +21,23 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        auto vocho=new auto();
-        vocho.modelo="1980";
-        vocho.marca="vocho";
-        vocho.color="azul";
+        Calculadora cal=new Calculadora();
+        Scanner entra=new Scanner(System.in);
+        System.out.println("Humano ingresa tus 2 valores a sumar");
+        int resultado=cal.suma(entra.nextInt(), entra.nextInt());
+        System.out.println("Humano este es el resultado = "+resultado);
         
-        vocho.meterLlave("123456");
-        vocho.mando("enciende");
-        /*
-        vocho.enciende();
-        vocho.acelera();
-        vocho.frenar();
-        System.out.println("Marca "+vocho.marca);
-        */
+        System.out.println("Humano ingresa tus 2 valores a restar");
+        resultado=cal.resta(entra.nextInt(), entra.nextInt());
+        System.out.println("Humano este es el resultado = "+resultado);
         
+        System.out.println("Humano ingresa tus 2 valores a multiplicar");
+        resultado=cal.multiplicacion(entra.nextInt(), entra.nextInt());
+        System.out.println("Humano este es el resultado = "+resultado);
+        
+        System.out.println("Humano ingresa tus 2 valores a divicion");
+        resultado=cal.divicion(entra.nextInt(), entra.nextInt());
+        System.out.println("Humano este es el resultado = "+resultado);
     }
     
 }
