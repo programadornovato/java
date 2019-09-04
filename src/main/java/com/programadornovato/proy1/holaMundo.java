@@ -26,10 +26,14 @@ public class holaMundo {
         vocho.marca="vocho";
         vocho.color="azul";
         
+        vocho.meterLlave("123456");
+        vocho.mando("enciende");
+        /*
         vocho.enciende();
         vocho.acelera();
         vocho.frenar();
         System.out.println("Marca "+vocho.marca);
+        */
         
     }
     

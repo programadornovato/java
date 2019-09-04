@@ -13,7 +13,24 @@ public class auto {
 	String marca;
 	String modelo;
 	String color;
-        public void enciende(){
+        private boolean acceso=false;
+        public void meterLlave(String clave){
+            if(clave.equals("123456")){
+                acceso=true;
+            }
+            else{
+                acceso=false;
+                System.out.println("Llamar a la policia");
+            }
+        }
+        public void mando(String accion){
+            if(acceso==true){
+                if(accion.equals("enciende")){
+                    enciende();
+                }
+            }
+        }
+        private void enciende(){
             System.out.println("Enciende run run");
         }
         public void acelera(){
