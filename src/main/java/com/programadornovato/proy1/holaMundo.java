@@ -21,10 +21,15 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Persona per=new Persona("Juan",18);
-        //per.inicializar("Juan", 17);
-        System.out.println("Nombre="+per.nombre+" Edad="+per.edad);
+        /*
+        Random rand=new Random();
+        rand.nextInt();
+        */
+        Vehiculo v1=new Vehiculo("Vocho", "1990");
+        v1.acelerar();
         
+        Vehiculo v2=new Vehiculo("SKU Vochoman");
+        v2.acelerar(50);
     }
     
 }
