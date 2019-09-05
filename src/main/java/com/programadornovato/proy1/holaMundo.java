@@ -21,23 +21,10 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Calculadora cal=new Calculadora();
-        Scanner entra=new Scanner(System.in);
-        System.out.println("Humano ingresa tus 2 valores a sumar");
-        int resultado=cal.suma(entra.nextInt(), entra.nextInt());
-        System.out.println("Humano este es el resultado = "+resultado);
+        Persona per=new Persona("Juan",18);
+        //per.inicializar("Juan", 17);
+        System.out.println("Nombre="+per.nombre+" Edad="+per.edad);
         
-        System.out.println("Humano ingresa tus 2 valores a restar");
-        resultado=cal.resta(entra.nextInt(), entra.nextInt());
-        System.out.println("Humano este es el resultado = "+resultado);
-        
-        System.out.println("Humano ingresa tus 2 valores a multiplicar");
-        resultado=cal.multiplicacion(entra.nextInt(), entra.nextInt());
-        System.out.println("Humano este es el resultado = "+resultado);
-        
-        System.out.println("Humano ingresa tus 2 valores a divicion");
-        resultado=cal.divicion(entra.nextInt(), entra.nextInt());
-        System.out.println("Humano este es el resultado = "+resultado);
     }
     
 }
