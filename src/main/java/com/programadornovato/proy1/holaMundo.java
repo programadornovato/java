@@ -21,11 +21,9 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //setters=ponedor   getter=jalador
-        Empleado e1=new Empleado();
-        //e1.edad=300;
-        e1.setEdad(50);
-        System.out.println("edad="+e1.getEdad());
+        Persona p=new Persona("Juan");
+        p.setDinero(10);
+        System.out.println("Nombre="+p.getNombre()+" dinero="+p.getDinero());
     }
     
 }
