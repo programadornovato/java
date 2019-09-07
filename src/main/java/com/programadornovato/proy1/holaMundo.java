@@ -21,9 +21,31 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Persona p=new Persona("Juan");
-        p.setDinero(10);
-        System.out.println("Nombre="+p.getNombre()+" dinero="+p.getDinero());
+        /*
+        Estatica i1=new Estatica();
+        Estatica i2=new Estatica();
+        */
+        /*
+        System.out.println("i1="+i1.normal);
+        System.out.println("i2="+i2.normal);
+        i1.normal="Cambio de valor en i1";
+        i2.normal="Cambio de valor en i2";
+        System.out.println("");
+        System.out.println("i1="+i1.normal);
+        System.out.println("i2="+i2.normal);
+        */
+        /*
+        System.out.println("i1="+i1.estatico);
+        System.out.println("i2="+i2.estatico);
+        
+        i2.estatico="Nuevo valor desde i2";
+        i1.estatico="Nuevo valor desde i1";
+        
+        System.out.println("");
+        System.out.println("i1="+i1.estatico);
+        System.out.println("i2="+i2.estatico);
+        */
+        System.out.println(Estatica.estatico);
     }
     
 }
