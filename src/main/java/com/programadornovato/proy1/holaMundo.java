@@ -21,7 +21,15 @@ public class holaMundo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        Animal a=new Animal();
+        a.comer();
+        a.correr();
+        
+        Humano h=new Humano();
+        h.correr();
+        
+        Pajaro p=new Pajaro();
+        p.vuela();
     }
     
 }
