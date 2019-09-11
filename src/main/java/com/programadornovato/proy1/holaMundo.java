@@ -5,6 +5,7 @@
  */
 package com.programadornovato.proy1;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Random;
@@ -17,6 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class holaMundo {
     static Scanner entra=new Scanner(System.in);
+    static ArrayList <Terreno> pedazoTerreno=new ArrayList<Terreno>();
     /**
      * @param args the command line arguments
      */
@@ -37,13 +39,41 @@ public class holaMundo {
             System.out.println("Humano desea meter mas pedazos de terreno a calcular? s/n");
             respuesta=entra.next().charAt(0);
         }while( respuesta=='s' || respuesta=='S' );
+        mostrarResultados();
     }
 
     protected static void llenaTriangulo() {
-        System.out.println("tringulo");
+        double lado1,lado2,lado3;
+        System.out.println("Humano que medida tiene tu lado 1 de tu triangulo");
+        lado1=entra.nextDouble();
+        System.out.println("Humano que medida tiene tu lado 2 de tu triangulo");
+        lado2=entra.nextDouble();
+        System.out.println("Humano que medida tiene tu lado 3 de tu triangulo");
+        lado3=entra.nextDouble();
+        Triangulo t=new Triangulo(lado1, lado2, lado3);
+        pedazoTerreno.add(t);
+        
+        
     }
     protected static void llenaRectangulo() {
-        System.out.println("rectangulo");
+        double lado1,lado2;
+        System.out.println("Humano que medida tiene tu lado 1 de tu rectangulo");
+        lado1=entra.nextDouble();
+        System.out.println("Humano que medida tiene tu lado 2 de tu rectangulo");
+        lado2=entra.nextDouble();
+        Rectangulo r=new Rectangulo(lado1, lado2);
+        pedazoTerreno.add(r);
+
     }
+
+    private static void mostrarResultados() {
+        double area=0;
+        for( Terreno t: pedazoTerreno ){
+            System.out.println(t.toString() + "Area" + t.area());
+            area=area+t.area();
+        }
+        System.out.println("El area total de tu bendito terreno es:"+area);
+    }
+    
     
 }
