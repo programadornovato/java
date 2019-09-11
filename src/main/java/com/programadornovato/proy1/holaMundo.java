@@ -13,13 +13,15 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Esta es nuestra clase principal a donde se accede al programa
  * @author eugenio
+ * @version 1.0
  */
 public class holaMundo {
     static Scanner entra=new Scanner(System.in);
     static ArrayList <Terreno> pedazoTerreno=new ArrayList<Terreno>();
     /**
+     * Este es el metodo principal
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -42,6 +44,10 @@ public class holaMundo {
         mostrarResultados();
     }
 
+    /**
+     * Este metodo se encarga de recibir desde scaner 3 numero y colocarlos en la
+     * instancia (hija) triangulo y esa instancia agregarla al arreglo de terrenos
+     */
     protected static void llenaTriangulo() {
         double lado1,lado2,lado3;
         System.out.println("Humano que medida tiene tu lado 1 de tu triangulo");
@@ -55,6 +61,11 @@ public class holaMundo {
         
         
     }
+
+    /**
+     * Este metodo se encarga de recibir desde scaner 3 numero y colocarlos en la
+     * instancia (hija) rectangulo y esa instancia agregarla al arreglo de terrenos
+     */
     protected static void llenaRectangulo() {
         double lado1,lado2;
         System.out.println("Humano que medida tiene tu lado 1 de tu rectangulo");
@@ -65,7 +76,11 @@ public class holaMundo {
         pedazoTerreno.add(r);
 
     }
-
+    
+    /**
+     * Simplemente se muestran los datos del area de cada instancia hija y el area total
+     * 
+     */
     private static void mostrarResultados() {
         double area=0;
         for( Terreno t: pedazoTerreno ){
