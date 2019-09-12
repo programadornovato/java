@@ -6,6 +6,10 @@
 package com.programadornovato.proy1;
 
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -23,17 +27,21 @@ public class holaMundo {
      * Este es el metodo principal
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
+        
+        //EXCEPCIONES VERIFICADAS
+        BufferedReader bf=new BufferedReader(new FileReader("/home/eugenio/archivo/archivo.txt"));
+        String linea;
+        while ( (linea=bf.readLine()) != null ){
+            System.out.println(linea);
+        }
+        
         /*
-        int a,b;
-        a=5;
-        b=0;
-        int resultado=a/b;
+        //EXCEPCIONES NO VERIFICADAS
+        int a,b,resultado;
+        a=10;b=0;
+        resultado=a/b;
         System.out.println(resultado);
         */
-        Scanner entra=new Scanner(System.in);
-        System.out.println("Humano quiero que introduscas un numero:");
-        int num=entra.nextInt();
-        System.out.println(num);
     }
 }
