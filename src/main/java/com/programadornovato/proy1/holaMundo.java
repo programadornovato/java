@@ -5,6 +5,7 @@
  */
 package com.programadornovato.proy1;
 
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -18,77 +19,40 @@ import javax.swing.JOptionPane;
  * @version 1.0
  */
 public class holaMundo {
-    static Scanner entra=new Scanner(System.in);
-    static ArrayList <Terreno> pedazoTerreno=new ArrayList<Terreno>();
     /**
      * Este es el metodo principal
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        char respuesta;
-        int opcion;
-        do{
-            System.out.println("Humano que tipo de pedazo de terreno quieres ingresar?");
-            System.out.println("1: Triangulo");
-            System.out.println("2: Rectangulo");
-            opcion=entra.nextInt();
-            switch(opcion){
-                case 1:llenaTriangulo();
-                break;
-                case 2:llenaRectangulo();
-                break;
-            }
-            System.out.println("Humano desea meter mas pedazos de terreno a calcular? s/n");
-            respuesta=entra.next().charAt(0);
-        }while( respuesta=='s' || respuesta=='S' );
-        mostrarResultados();
+        //listaNormal();
+        listaDinamica();
     }
 
-    /**
-     * Este metodo se encarga de recibir desde scaner 3 numero y colocarlos en la
-     * instancia (hija) triangulo y esa instancia agregarla al arreglo de terrenos
-     */
-    protected static void llenaTriangulo() {
-        double lado1,lado2,lado3;
-        System.out.println("Humano que medida tiene tu lado 1 de tu triangulo");
-        lado1=entra.nextDouble();
-        System.out.println("Humano que medida tiene tu lado 2 de tu triangulo");
-        lado2=entra.nextDouble();
-        System.out.println("Humano que medida tiene tu lado 3 de tu triangulo");
-        lado3=entra.nextDouble();
-        Triangulo t=new Triangulo(lado1, lado2, lado3);
-        pedazoTerreno.add(t);
-        
-        
-    }
-
-    /**
-     * Este metodo se encarga de recibir desde scaner 3 numero y colocarlos en la
-     * instancia (hija) rectangulo y esa instancia agregarla al arreglo de terrenos
-     */
-    protected static void llenaRectangulo() {
-        double lado1,lado2;
-        System.out.println("Humano que medida tiene tu lado 1 de tu rectangulo");
-        lado1=entra.nextDouble();
-        System.out.println("Humano que medida tiene tu lado 2 de tu rectangulo");
-        lado2=entra.nextDouble();
-        Rectangulo r=new Rectangulo(lado1, lado2);
-        pedazoTerreno.add(r);
-
-    }
-    
-    /**
-     * Simplemente se muestran los datos del area de cada instancia hija y el area total
-     * 
-     */
-    private static void mostrarResultados() {
-        double area=0;
-        for( Terreno t: pedazoTerreno ){
-            System.out.println(t.toString() + "Area" + t.area());
-            area=area+t.area();
+    private static void listaNormal() {
+        int numEle=Integer.parseInt(JOptionPane.showInputDialog("Humano cuantos elelemtnos vas a ingresar"));
+        String lista[]=new String[numEle];
+        for(int i=0;i<lista.length;i++){
+            lista[i]=new String();
+            lista[i]=JOptionPane.showInputDialog("Humano ingresa el valor del elemento "+(i+1));
         }
-        System.out.println("El area total de tu bendito terreno es:"+area);
+        System.out.println("Resultados de la lista normal");
+        for(int i=0;i<lista.length;i++){
+            System.out.println(lista[i]);
+        }
     }
-    
-    
+
+    private static void listaDinamica() {
+        ArrayList <String> lista=new ArrayList<String>();
+        char respuesta;
+        do{
+            lista.add(JOptionPane.showInputDialog("Humano ingresa el valor"));
+            respuesta=JOptionPane.showInputDialog("Humano quieres meter mas elementos? s/n").charAt(0);
+        }while(respuesta=='s'  || respuesta=='S' );
+        
+        System.out.println("Resultados de la lista dinamica");
+        for(int i=0;i<lista.size();i++){
+            System.out.println(lista.get(i));
+        }
+
+    }
 }
