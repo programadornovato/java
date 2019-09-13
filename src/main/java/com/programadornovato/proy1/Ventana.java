@@ -14,10 +14,19 @@ import javax.swing.JFrame;
  * @author eugenio
  */
 public class Ventana extends JFrame{
-
+    /*
     public Ventana() throws HeadlessException {
         Dimension d=new Dimension(500, 500);
         this.setSize(d);
     }
+    */
+    public Ventana(String title) throws HeadlessException {
+        super(title);
+        Dimension d=new Dimension(500, 500);
+        this.setSize(d);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+    }
+    
     
 }
