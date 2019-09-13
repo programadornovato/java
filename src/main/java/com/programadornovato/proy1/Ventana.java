@@ -20,12 +20,14 @@ public class Ventana extends JFrame{
         this.setSize(d);
     }
     */
-    public Ventana(String title) throws HeadlessException {
+    public Ventana(String title) throws HeadlessException, InterruptedException {
         super(title);
-        Dimension d=new Dimension(500, 500);
-        this.setSize(d);
+        //Dimension d=new Dimension(500, 500);
+        //this.setSize(d);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+        //this.setLocation(300, 300);
+        this.setBounds(300, 300, 500, 500);
+        this.setLocationRelativeTo(null);
     }
     
     

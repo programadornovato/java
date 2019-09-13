@@ -6,6 +6,7 @@
 package com.programadornovato.proy1;
 
 
+import java.awt.HeadlessException;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -27,9 +28,15 @@ public class holaMundo {
      * Este es el metodo principal
      * @param args the command line arguments
      */
-    public static void main(String[] args){
+    public static void main(String[] args) throws HeadlessException, InterruptedException{
         Ventana v=new Ventana("Si me buscas este es mi id"+getPID());
         v.setVisible(true);
+        /*
+        for (int i = 0; i < 10; i++) {
+            Thread.sleep(200);
+            v.setLocation(i*30, i*30);
+        }
+        */
     }
     public static String getPID(){
         return java.lang.management.ManagementFactory.getRuntimeMXBean().getName();
