@@ -27,38 +27,8 @@ public class holaMundo {
      * Este es el metodo principal
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        /*
-        try{
-            leerArchivo();
-        }
-        catch( FileNotFoundException e ){
-            System.out.println("Archivo no encontrado:"+e);
-        }
-        catch ( IOException e ){
-            System.out.println("No se puede acceder a ese archivo:"+e);
-        }
-        catch ( Exception e){
-            System.out.println(e);
-        }
-        finally{
-            System.out.println("Yo me ejecuto si o si");
-        }
-        */
-        try{
-            Integer num = null;
-            System.out.println(num.toString());
-        }
-        catch(NullPointerException e){
-            System.out.println("Debes inicializar tu objeto");
-        }
-    }
-    public static void leerArchivo() throws FileNotFoundException, IOException{
-        //EXCEPCIONES VERIFICADAS
-        BufferedReader bf=new BufferedReader(new FileReader("/home/eugenio/archivo/archivo.txt"));
-        String linea;
-        while ( (linea=bf.readLine()) != null ){
-            System.out.println(linea);
-        }        
+    public static void main(String[] args){
+        Ventana v=new Ventana();
+        v.setVisible(true);
     }
 }
