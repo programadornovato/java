@@ -21,6 +21,9 @@ public class Ventana extends JFrame{
         JPanel panel1;
         JPanel panel2;
         JPanel panel3;
+        JLabel e1;
+        JLabel e2;
+        JLabel e3;
     /*
     public Ventana() throws HeadlessException {
         Dimension d=new Dimension(500, 500);
@@ -57,9 +60,9 @@ public class Ventana extends JFrame{
     }
 
     protected void inicaEtiquetas() {
-        JLabel e1=new JLabel("<html>Hola Humano soy la etiqueta1</html>");
-        JLabel e2=new JLabel("<html>Hola Humano soy la etiqueta2</html>");
-        JLabel e3=new JLabel("<html>Hola Humano soy la etiqueta3</html>");
+        e1=new JLabel("<html>Hola Humano soy la etiqueta1</html>");
+        e2=new JLabel("<html>Hola Humano soy la etiqueta2</html>");
+        e3=new JLabel("<html>Hola Humano soy la etiqueta3</html>");
         
         this.panel1.add(e1);
         this.panel2.add(e2);
@@ -81,6 +84,10 @@ public class Ventana extends JFrame{
         this.panel2.setVisible(false);
         
     }
-    
+    public void setTextos(String textos[]){
+        this.e1.setText(textos[0]);
+        this.e2.setText(textos[1]);
+        this.e3.setText(textos[2]);
+    }
     
 }
