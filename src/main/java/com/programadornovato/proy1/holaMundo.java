@@ -31,12 +31,6 @@ public class holaMundo {
     public static void main(String[] args) throws HeadlessException, InterruptedException{
         Ventana v=new Ventana("Si me buscas este es mi id"+getPID());
         v.setVisible(true);
-        /*
-        for (int i = 0; i < 10; i++) {
-            Thread.sleep(200);
-            v.setLocation(i*30, i*30);
-        }
-        */
     }
     public static String getPID(){
         return java.lang.management.ManagementFactory.getRuntimeMXBean().getName();
