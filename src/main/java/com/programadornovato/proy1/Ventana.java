@@ -10,6 +10,7 @@ import java.awt.Dimension;
 import java.awt.HeadlessException;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -17,6 +18,9 @@ import javax.swing.JPanel;
  * @author eugenio
  */
 public class Ventana extends JFrame{
+        JPanel panel1;
+        JPanel panel2;
+        JPanel panel3;
     /*
     public Ventana() throws HeadlessException {
         Dimension d=new Dimension(500, 500);
@@ -32,23 +36,50 @@ public class Ventana extends JFrame{
         this.setBounds(300, 300, 500, 500);
         this.setLocationRelativeTo(null);
         iniciarPaneles();
+        inicaEtiquetas();
     }
 
     protected void iniciarPaneles() {
         JPanel contenedor=new JPanel();
         this.getContentPane().add(contenedor);
         contenedor.setBackground(Color.red);
-        JPanel panel1=new JPanel();
-        JPanel panel2=new JPanel();
-        JPanel panel3=new JPanel();
-        contenedor.add(panel1);
-        contenedor.add(panel2);
-        contenedor.add(panel3);
-        panel1.setBackground(new Color(0, 51, 102));
-        panel2.setBackground(new Color(0, 102, 255));
-        panel3.setBackground(new Color(255, 0, 255));
+        this.panel1=new JPanel();
+        this.panel2=new JPanel();
+        this.panel3=new JPanel();
+        contenedor.add(this.panel1);
+        contenedor.add(this.panel2);
+        contenedor.add(this.panel3);
+        this.panel1.setBackground(new Color(0, 51, 102));
+        this.panel2.setBackground(new Color(0, 102, 255));
+        this.panel3.setBackground(new Color(255, 0, 255));
         contenedor.setLayout(new BoxLayout(contenedor, BoxLayout.X_AXIS));
-        //panel3.setVisible(false);
+        //this.panel3.setVisible(false);
+    }
+
+    protected void inicaEtiquetas() {
+        JLabel e1=new JLabel("<html>Hola Humano soy la etiqueta1</html>");
+        JLabel e2=new JLabel("<html>Hola Humano soy la etiqueta2</html>");
+        JLabel e3=new JLabel("<html>Hola Humano soy la etiqueta3</html>");
+        
+        this.panel1.add(e1);
+        this.panel2.add(e2);
+        this.panel3.add(e3);
+        
+        e1.setForeground(Color.white);
+        e2.setForeground(Color.white);
+        e3.setForeground(Color.white);
+        
+        this.panel1.setLayout(null);
+        this.panel2.setLayout(null);
+        this.panel3.setLayout(null);
+        
+        e1.setBounds(10, 100, 90, 60);
+        e2.setBounds(10, 100, 90, 60);
+        e3.setBounds(10, 100, 90, 60);
+        
+        e1.setText("<html>Hola humano</html>");
+        this.panel2.setVisible(false);
+        
     }
     
     
