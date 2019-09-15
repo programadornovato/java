@@ -9,7 +9,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.HeadlessException;
+import java.awt.Image;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -62,9 +64,11 @@ public class Ventana extends JFrame{
     }
 
     protected void inicaEtiquetas() {
-        e1=new JLabel("<html>Hola1</html>");
+        //ImageIcon imagen1=new ImageIcon("images/netbeans 11.png");
+        //ImageIcon imagenEscala=new ImageIcon(imagen1.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));
+        e1=new JLabel("<html>Hola1</html>",new ImageIcon(new ImageIcon("images/netbeans 11.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT)),SwingConstants.LEFT);
         e2=new JLabel("<html>Hola2</html>");
-        e3=new JLabel("<html>Hola3</html>");
+        e3=new JLabel("h");
         
         this.panel1.add(e1);
         this.panel2.add(e2);
@@ -84,7 +88,7 @@ public class Ventana extends JFrame{
         
         //e1.setText("<html>Hola humano</html>");
         //this.panel2.setVisible(false);
-        e1.setOpaque(true);
+        e1.setOpaque(false);
         e2.setOpaque(true);
         e3.setOpaque(true);
         
@@ -123,6 +127,9 @@ public class Ventana extends JFrame{
         e1.setFont(new Font("Megatron",Font.ITALIC,15));
         e2.setFont(new Font("Face Your Fears",Font.BOLD,20));
         e3.setFont(new Font("ObelixPro",Font.PLAIN,25));
+        
+        e2.setIcon(new ImageIcon(new ImageIcon("images/netbeans 11.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT)));
+        e3.setIcon(new ImageIcon(new ImageIcon("images/netbeans 11.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT)));
         
     }
     public void setTextos(String textos[]){
