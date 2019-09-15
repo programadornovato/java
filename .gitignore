@@ -4,3 +4,4 @@
 target/classes/.netbeans_automatic_build
 target/test-classes/.netbeans_automatic_build
 nbactions.xml
+/target (copia)/

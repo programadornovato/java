@@ -12,6 +12,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 /**
  *
@@ -60,9 +61,9 @@ public class Ventana extends JFrame{
     }
 
     protected void inicaEtiquetas() {
-        e1=new JLabel("<html>Hola Humano soy la etiqueta1</html>");
-        e2=new JLabel("<html>Hola Humano soy la etiqueta2</html>");
-        e3=new JLabel("<html>Hola Humano soy la etiqueta3</html>");
+        e1=new JLabel("<html>Hola1</html>");
+        e2=new JLabel("<html>Hola2</html>");
+        e3=new JLabel("<html>Hola3</html>");
         
         this.panel1.add(e1);
         this.panel2.add(e2);
@@ -76,12 +77,36 @@ public class Ventana extends JFrame{
         this.panel2.setLayout(null);
         this.panel3.setLayout(null);
         
-        e1.setBounds(10, 100, 90, 60);
-        e2.setBounds(10, 100, 90, 60);
-        e3.setBounds(10, 100, 90, 60);
+        e1.setBounds(10, 100, 120, 60);
+        e2.setBounds(10, 100, 120, 60);
+        e3.setBounds(10, 100, 120, 60);
         
-        e1.setText("<html>Hola humano</html>");
-        this.panel2.setVisible(false);
+        //e1.setText("<html>Hola humano</html>");
+        //this.panel2.setVisible(false);
+        e1.setOpaque(true);
+        e2.setOpaque(true);
+        e3.setOpaque(true);
+        
+        e1.setBackground(Color.black);
+        e2.setBackground(Color.black);
+        e3.setBackground(Color.black);
+        /*
+        HorizontalAlignment
+        CENTER  = 0;
+        LEFT    = 2;
+        RIGHT   = 4;
+        
+        VerticalAlignment
+        TOP     = 1;
+        BOTTOM  = 3;
+	*/
+
+        e1.setHorizontalAlignment(SwingConstants.LEFT);
+        e2.setHorizontalAlignment(SwingConstants.CENTER);
+        e3.setHorizontalAlignment(SwingConstants.RIGHT);
+        
+        e1.setVerticalAlignment(SwingConstants.TOP);
+        e2.setVerticalAlignment(SwingConstants.BOTTOM);
         
     }
     public void setTextos(String textos[]){
