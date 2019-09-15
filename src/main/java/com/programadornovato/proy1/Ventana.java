@@ -7,6 +7,7 @@ package com.programadornovato.proy1;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.HeadlessException;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
@@ -107,6 +108,21 @@ public class Ventana extends JFrame{
         
         e1.setVerticalAlignment(SwingConstants.TOP);
         e2.setVerticalAlignment(SwingConstants.BOTTOM);
+        /*
+        name
+        DIALOG = "Dialog";
+        DIALOG_INPUT = "DialogInput";
+        SANS_SERIF = "SansSerif";
+        SERIF = "Serif";
+        
+        style
+        PLAIN       = 0;
+        BOLD        = 1;
+        ITALIC      = 2;
+        */
+        e1.setFont(new Font("Megatron",Font.ITALIC,15));
+        e2.setFont(new Font("Face Your Fears",Font.BOLD,20));
+        e3.setFont(new Font("ObelixPro",Font.PLAIN,25));
         
     }
     public void setTextos(String textos[]){
