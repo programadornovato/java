@@ -74,12 +74,14 @@ public class Ventana extends JFrame{
         this.getContentPane().add(contenedor);
         contenedor.add(b1);
         contenedor.setLayout(null);
-        b1.setBounds(100, 100, 180, 30);
+        b1.setBounds(100, 100, 250, 50);
         b1.setText("Que le des like!!!");
         b1.setEnabled(true);
         b1.setMnemonic(KeyEvent.VK_J);
-        
-
+        b1.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 15));
+        b1.setBackground(new Color(193, 9, 9));
+        b1.setForeground(Color.WHITE);
+        b1.setIcon( new ImageIcon( new ImageIcon("images/like.png").getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH) ));
     }
     
 }
