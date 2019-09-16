@@ -5,14 +5,17 @@
  */
 package com.programadornovato.proy1;
 
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.HeadlessException;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -26,6 +29,8 @@ import javax.swing.SwingConstants;
 public class Ventana extends JFrame{
     ArrayList <JPanel> panel=new ArrayList<JPanel>();
     ArrayList <JLabel> etiqueta=new ArrayList<JLabel>();
+    JButton b1;
+    Button awtb;
     int num=4;
     public Ventana(String title) throws HeadlessException, InterruptedException {
         super(title);
@@ -35,9 +40,10 @@ public class Ventana extends JFrame{
         //this.setLocation(300, 300);
         this.setBounds(300, 300, 500, 500);
         this.setLocationRelativeTo(null);
-        this.num= Integer.parseInt(JOptionPane.showInputDialog("Humano cuantos paneles quieres"));
-        iniciarPaneles();
-        inicaEtiquetas();
+        //this.num= Integer.parseInt(JOptionPane.showInputDialog("Humano cuantos paneles quieres"));
+        //iniciarPaneles();
+        //inicaEtiquetas();
+        iniciarBotones();
     }
 
     protected void iniciarPaneles() {
@@ -62,6 +68,24 @@ public class Ventana extends JFrame{
         
     }
     public void setTextos(String textos[]){
+    }
+
+    protected void iniciarBotones() {
+        b1=new JButton("Dale like!!!");
+        awtb=new Button("Entiende que le des like!!!");
+        JPanel contenedor=new JPanel();
+        this.getContentPane().add(contenedor);
+        contenedor.add(b1);
+        contenedor.add(awtb);
+        contenedor.setLayout(null);
+        b1.setBounds(100, 100, 180, 30);
+        awtb.setBounds(100 , 300 , 180, 30);
+        b1.setText("Que le des like!!!");
+        awtb.setLabel("");
+        b1.setEnabled(true);
+        b1.setMnemonic(KeyEvent.VK_J);
+        
+
     }
     
 }
