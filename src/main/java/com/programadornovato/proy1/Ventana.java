@@ -10,10 +10,12 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.HeadlessException;
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -22,18 +24,9 @@ import javax.swing.SwingConstants;
  * @author eugenio
  */
 public class Ventana extends JFrame{
-        JPanel panel1;
-        JPanel panel2;
-        JPanel panel3;
-        JLabel e1;
-        JLabel e2;
-        JLabel e3;
-    /*
-    public Ventana() throws HeadlessException {
-        Dimension d=new Dimension(500, 500);
-        this.setSize(d);
-    }
-    */
+    ArrayList <JPanel> panel=new ArrayList<JPanel>();
+    ArrayList <JLabel> etiqueta=new ArrayList<JLabel>();
+    int num=4;
     public Ventana(String title) throws HeadlessException, InterruptedException {
         super(title);
         //Dimension d=new Dimension(500, 500);
@@ -42,6 +35,7 @@ public class Ventana extends JFrame{
         //this.setLocation(300, 300);
         this.setBounds(300, 300, 500, 500);
         this.setLocationRelativeTo(null);
+        this.num= Integer.parseInt(JOptionPane.showInputDialog("Humano cuantos paneles quieres"));
         iniciarPaneles();
         inicaEtiquetas();
     }
@@ -50,92 +44,24 @@ public class Ventana extends JFrame{
         JPanel contenedor=new JPanel();
         this.getContentPane().add(contenedor);
         contenedor.setBackground(Color.red);
-        this.panel1=new JPanel();
-        this.panel2=new JPanel();
-        this.panel3=new JPanel();
-        contenedor.add(this.panel1);
-        contenedor.add(this.panel2);
-        contenedor.add(this.panel3);
-        this.panel1.setBackground(new Color(0, 51, 102));
-        this.panel2.setBackground(new Color(0, 102, 255));
-        this.panel3.setBackground(new Color(255, 0, 255));
+        
+        for(int i=0;i<this.num;i++){
+            this.panel.add(new JPanel());
+            contenedor.add(this.panel.get(i));
+            this.panel.get(i).setBackground(new Color(i*50, i*50, i*50));
+        }
         contenedor.setLayout(new BoxLayout(contenedor, BoxLayout.X_AXIS));
-        //this.panel3.setVisible(false);
     }
 
     protected void inicaEtiquetas() {
-        //ImageIcon imagen1=new ImageIcon("images/netbeans 11.png");
-        //ImageIcon imagenEscala=new ImageIcon(imagen1.getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT));
-        e1=new JLabel("<html>Hola1</html>",new ImageIcon(new ImageIcon("images/netbeans 11.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT)),SwingConstants.LEFT);
-        e2=new JLabel("<html>Hola2</html>");
-        e3=new JLabel("h");
-        
-        this.panel1.add(e1);
-        this.panel2.add(e2);
-        this.panel3.add(e3);
-        
-        e1.setForeground(Color.white);
-        e2.setForeground(Color.white);
-        e3.setForeground(Color.white);
-        
-        this.panel1.setLayout(null);
-        this.panel2.setLayout(null);
-        this.panel3.setLayout(null);
-        
-        e1.setBounds(10, 100, 120, 60);
-        e2.setBounds(10, 100, 120, 60);
-        e3.setBounds(10, 100, 120, 60);
-        
-        //e1.setText("<html>Hola humano</html>");
-        //this.panel2.setVisible(false);
-        e1.setOpaque(false);
-        e2.setOpaque(true);
-        e3.setOpaque(true);
-        
-        e1.setBackground(Color.black);
-        e2.setBackground(Color.black);
-        e3.setBackground(Color.black);
-        /*
-        HorizontalAlignment
-        CENTER  = 0;
-        LEFT    = 2;
-        RIGHT   = 4;
-        
-        VerticalAlignment
-        TOP     = 1;
-        BOTTOM  = 3;
-	*/
-
-        e1.setHorizontalAlignment(SwingConstants.LEFT);
-        e2.setHorizontalAlignment(SwingConstants.CENTER);
-        e3.setHorizontalAlignment(SwingConstants.RIGHT);
-        
-        e1.setVerticalAlignment(SwingConstants.TOP);
-        e2.setVerticalAlignment(SwingConstants.BOTTOM);
-        /*
-        name
-        DIALOG = "Dialog";
-        DIALOG_INPUT = "DialogInput";
-        SANS_SERIF = "SansSerif";
-        SERIF = "Serif";
-        
-        style
-        PLAIN       = 0;
-        BOLD        = 1;
-        ITALIC      = 2;
-        */
-        e1.setFont(new Font("Megatron",Font.ITALIC,15));
-        e2.setFont(new Font("Face Your Fears",Font.BOLD,20));
-        e3.setFont(new Font("ObelixPro",Font.PLAIN,25));
-        
-        e2.setIcon(new ImageIcon(new ImageIcon("images/netbeans 11.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT)));
-        e3.setIcon(new ImageIcon(new ImageIcon("images/netbeans 11.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT)));
+        for(int i=0;i<this.num;i++){
+            this.etiqueta.add(new JLabel("Hola"+(i+1), new ImageIcon(new ImageIcon("images/netbeans 11.png").getImage().getScaledInstance(60, 60, Image.SCALE_DEFAULT)) , SwingConstants.RIGHT ));
+            this.etiqueta.get(i).setForeground(Color.white);
+            this.panel.get(i).add(this.etiqueta.get(i));
+        }
         
     }
     public void setTextos(String textos[]){
-        this.e1.setText(textos[0]);
-        this.e2.setText(textos[1]);
-        this.e3.setText(textos[2]);
     }
     
 }
