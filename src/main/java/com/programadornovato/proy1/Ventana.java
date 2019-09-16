@@ -5,7 +5,6 @@
  */
 package com.programadornovato.proy1;
 
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -30,7 +29,6 @@ public class Ventana extends JFrame{
     ArrayList <JPanel> panel=new ArrayList<JPanel>();
     ArrayList <JLabel> etiqueta=new ArrayList<JLabel>();
     JButton b1;
-    Button awtb;
     int num=4;
     public Ventana(String title) throws HeadlessException, InterruptedException {
         super(title);
@@ -72,16 +70,12 @@ public class Ventana extends JFrame{
 
     protected void iniciarBotones() {
         b1=new JButton("Dale like!!!");
-        awtb=new Button("Entiende que le des like!!!");
         JPanel contenedor=new JPanel();
         this.getContentPane().add(contenedor);
         contenedor.add(b1);
-        contenedor.add(awtb);
         contenedor.setLayout(null);
         b1.setBounds(100, 100, 180, 30);
-        awtb.setBounds(100 , 300 , 180, 30);
         b1.setText("Que le des like!!!");
-        awtb.setLabel("");
         b1.setEnabled(true);
         b1.setMnemonic(KeyEvent.VK_J);
         
