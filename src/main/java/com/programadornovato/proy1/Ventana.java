@@ -21,6 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 /**
@@ -43,12 +44,27 @@ public class Ventana extends JFrame{
         this.setBounds(300, 300, 500, 500);
         this.setLocationRelativeTo(null);
         this.getContentPane().add(contenedor);
-        contenedor.setLayout(null);
+        //contenedor.setLayout(null);
         //this.num= Integer.parseInt(JOptionPane.showInputDialog("Humano cuantos paneles quieres"));
         //iniciarPaneles();
         //inicaEtiquetas();
         //iniciarBotones();
-        iniciarRadio();
+        //iniciarRadio();
+        iniciaCampoTexto();
+    }
+    public void iniciaCampoTexto(){
+        JTextField campoText=new JTextField();
+        campoText.setText("HHHHHHHHHHHHHHHHHHHH");
+        JTextField campoText2=new JTextField();
+        campoText2.setText("HHHHHHHHHHHHHHHHHHHH");
+        campoText2.setFont(new Font(Font.SERIF,Font.BOLD,20));
+        campoText2.setBackground(new Color(0, 10, 255));
+        campoText2.setForeground(new Color(255, 240, 0));
+        //campoText.setBounds(100, 100, 300, 25);
+        campoText.setColumns(20);
+        campoText2.setColumns(20);
+        this.contenedor.add(campoText);
+        this.contenedor.add(campoText2);
     }
     private void iniciarRadio() {
         ButtonGroup grupo=new ButtonGroup();
