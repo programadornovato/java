@@ -16,6 +16,7 @@ import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -53,7 +54,24 @@ public class Ventana extends JFrame{
         //iniciarBotones();
         //iniciarRadio();
         //iniciaCampoTexto();
-        iniciaAreaTexto();
+        //iniciaAreaTexto();
+        iniciaListaDesplegable();
+    }
+    public void iniciaListaDesplegable(){
+        String lenguajes[]={
+            "Java",
+            "PHP",
+            "JavaScript",
+            "C"
+        };
+        JComboBox listaDesplegable=new JComboBox(lenguajes);
+        listaDesplegable.setBounds(10, 10, 300, 30);
+        //listaDesplegable.setSelectedItem("JavaScript");
+        listaDesplegable.addItem("VisualBasic");
+        listaDesplegable.setSelectedIndex(3);
+        this.contenedor.add(listaDesplegable);
+        System.out.println("Humano este es el texto seleccionado:"+listaDesplegable.getSelectedItem());
+        System.out.println("Humano este es el texto seleccionado:"+listaDesplegable.getSelectedIndex());
     }
     public void iniciaAreaTexto(){
         JTextArea areaTexto=new JTextArea();
