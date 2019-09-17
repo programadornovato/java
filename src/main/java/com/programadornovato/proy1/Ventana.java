@@ -13,12 +13,14 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 
 /**
@@ -28,6 +30,8 @@ import javax.swing.SwingConstants;
 public class Ventana extends JFrame{
     ArrayList <JPanel> panel=new ArrayList<JPanel>();
     ArrayList <JLabel> etiqueta=new ArrayList<JLabel>();
+    ArrayList <JRadioButton> listaRb=new ArrayList<JRadioButton>();
+    JPanel contenedor=new JPanel();
     JButton b1;
     int num=4;
     public Ventana(String title) throws HeadlessException, InterruptedException {
@@ -38,10 +42,40 @@ public class Ventana extends JFrame{
         //this.setLocation(300, 300);
         this.setBounds(300, 300, 500, 500);
         this.setLocationRelativeTo(null);
+        this.getContentPane().add(contenedor);
+        contenedor.setLayout(null);
         //this.num= Integer.parseInt(JOptionPane.showInputDialog("Humano cuantos paneles quieres"));
         //iniciarPaneles();
         //inicaEtiquetas();
-        iniciarBotones();
+        //iniciarBotones();
+        iniciarRadio();
+    }
+    private void iniciarRadio() {
+        ButtonGroup grupo=new ButtonGroup();
+        String textoOpciones[]=
+        {
+            "Humano dame click",
+            "No no no, dame click a mi",
+            "Dame click y unete al lado oscuro"
+        };
+        for (int i = 0; i < textoOpciones.length; i++) {
+            listaRb.add(new JRadioButton());
+            listaRb.get(i).setText(textoOpciones[i]);
+            listaRb.get(i).setBounds(100, 100+(i*50), 350, 50);
+            listaRb.get(i).setFont(new Font(Font.SERIF,Font.BOLD,15));
+            if(i==2){
+                listaRb.get(i).setSelected(true);
+            }
+            grupo.add(listaRb.get(i));
+            this.contenedor.add(listaRb.get(i));
+            
+        }
+        /*
+        JRadioButton rb=new JRadioButton("Opcion 1");
+        rb.setBounds(100, 100, 350, 50);
+        rb.setEnabled(true);
+        this.contenedor.add(rb);
+        */
     }
 
     protected void iniciarPaneles() {
@@ -83,5 +117,6 @@ public class Ventana extends JFrame{
         b1.setForeground(Color.WHITE);
         b1.setIcon( new ImageIcon( new ImageIcon("images/like.png").getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH) ));
     }
+
     
 }
