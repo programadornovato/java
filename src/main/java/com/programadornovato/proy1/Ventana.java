@@ -13,6 +13,7 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -41,6 +42,7 @@ public class Ventana extends JFrame{
     JButton boton;
     JLabel etiqueta;
     JTextField caja;
+    JTextArea areaTexto;
     public Ventana(){
         contenedor=new JPanel();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -50,7 +52,45 @@ public class Ventana extends JFrame{
         this.contenedor.setLayout(null);
         
         //accionBoton();
-        accionRaton();
+        //accionRaton();
+        accionTeclado();
+    }
+    protected void accionTeclado(){
+        caja =new JTextField();
+        contenedor.add(caja);
+        caja.setBounds(10, 10, 400, 30);
+        
+        areaTexto =new JTextArea();
+        contenedor.add(areaTexto);
+        areaTexto.setBounds(10, 50, 400, 200);
+        
+        KeyListener l=new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                //areaTexto.append("keyTyped\n");
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                //areaTexto.append("keyPressed\n");
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                //areaTexto.append("keyReleased\n");
+                if(e.getKeyChar()=='*'){
+                    areaTexto.append("Presionaste el asterico\n");
+                }
+                if(e.getKeyChar()=='\n'){
+                    areaTexto.append("Presionaste enter\n");
+                }
+                if(e.getKeyChar()==' '){
+                    areaTexto.append("Presionaste espacio\n");
+                }
+            }
+        };
+        caja.addKeyListener(l);
+        
     }
     protected void accionRaton(){
         boton =new JButton("Humano!!! ponte jugar con el raton aqui");
