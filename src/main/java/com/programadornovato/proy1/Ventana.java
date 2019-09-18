@@ -13,6 +13,8 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -47,6 +49,47 @@ public class Ventana extends JFrame{
         this.getContentPane().add(this.contenedor);
         this.contenedor.setLayout(null);
         
+        //accionBoton();
+        accionRaton();
+    }
+    protected void accionRaton(){
+        boton =new JButton("Humano!!! ponte jugar con el raton aqui");
+        contenedor.add(boton);
+        boton.setBounds(10, 10, 400, 30);
+        
+        caja =new JTextField();
+        contenedor.add(caja);
+        caja.setBounds(10, 50, 400, 30);
+        MouseListener l = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                caja.setText("mouseClicked");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                caja.setText("mousePressed");
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                caja.setText("mouseReleased");
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                caja.setText("mouseEntered");
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                caja.setText("mouseExited");
+            }
+        };
+        
+        boton.addMouseListener(l);
+    }
+    private void accionBoton() {
         boton =new JButton("Humano pon tu miserable nombre para saludarte");
         contenedor.add(boton);
         boton.setBounds(10, 10, 400, 30);
@@ -68,7 +111,6 @@ public class Ventana extends JFrame{
         };
         
         boton.addActionListener(accion);
-        
     }
 
     
