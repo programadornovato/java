@@ -53,7 +53,47 @@ public class Ventana extends JFrame{
         
         //accionBoton();
         //accionRaton();
-        accionTeclado();
+        //accionTeclado();
+        validarNumeros();
+    }
+    protected void validarNumeros(){
+        caja =new JTextField();
+        contenedor.add(caja);
+        caja.setBounds(10, 10, 400, 30);
+        
+        areaTexto =new JTextArea();
+        contenedor.add(areaTexto);
+        areaTexto.setBounds(10, 50, 400, 200);
+        
+        KeyListener l=new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if(esNumero(caja.getText())==true){
+                    areaTexto.append("Si es numero\n");
+                }else{
+                    areaTexto.append("No humano, esto no es un numero\n");
+                }
+            }
+        };
+        caja.addKeyListener(l);
+    }
+    public boolean esNumero(String texto){
+        boolean resultado;
+        try {
+            Integer.parseInt(texto);
+            resultado=true;
+        } catch (Exception e) {
+            resultado=false;
+        }
+        return resultado;
     }
     protected void accionTeclado(){
         caja =new JTextField();
