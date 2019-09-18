@@ -10,6 +10,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.HeadlessException;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.BoxLayout;
@@ -34,7 +36,9 @@ import javax.swing.SwingConstants;
 public class Ventana extends JFrame{
     
     JPanel contenedor;
-    
+    JButton boton;
+    JLabel etiqueta;
+    JTextField caja;
     public Ventana(){
         contenedor=new JPanel();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,6 +46,29 @@ public class Ventana extends JFrame{
         this.setLocationRelativeTo(null);
         this.getContentPane().add(this.contenedor);
         this.contenedor.setLayout(null);
+        
+        boton =new JButton("Humano pon tu miserable nombre para saludarte");
+        contenedor.add(boton);
+        boton.setBounds(10, 10, 400, 30);
+        
+        caja =new JTextField();
+        contenedor.add(caja);
+        caja.setBounds(10, 50, 400, 30);
+        
+        etiqueta =new JLabel();
+        contenedor.add(etiqueta);
+        etiqueta.setBounds(10, 100, 400, 30);
+        
+        ActionListener accion=new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //System.out.println("Hola");
+                etiqueta.setText("Hola "+caja.getText());
+            }
+        };
+        
+        boton.addActionListener(accion);
+        
     }
 
     
