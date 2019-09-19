@@ -17,6 +17,8 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -54,7 +56,47 @@ public class Ventana extends JFrame{
         //accionBoton();
         //accionRaton();
         //accionTeclado();
-        validarNumeros();
+        //validarNumeros();
+        validarCorreo();
+    }
+    protected void validarCorreo(){
+        caja =new JTextField();
+        contenedor.add(caja);
+        caja.setBounds(10, 10, 400, 30);
+        
+        areaTexto =new JTextArea();
+        contenedor.add(areaTexto);
+        areaTexto.setBounds(10, 50, 400, 200);
+        
+        KeyListener l=new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if(e.getKeyChar()=='\n'){
+                    if(esCorreo(caja.getText())==true){
+                        areaTexto.append("Si humano esto es un correo\n");
+                    }
+                    else{
+                        areaTexto.append("No humano estupido esto NO!! es un correo\n");
+                    }
+                }
+            }
+        };
+        caja.addKeyListener(l);
+    }
+    public boolean esCorreo(String correo){
+        Pattern patroncito = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher comparar=patroncito.matcher(correo);
+        return comparar.find();
     }
     protected void validarNumeros(){
         caja =new JTextField();
